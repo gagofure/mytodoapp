@@ -26,12 +26,8 @@ COPY --from=builder /app/build /usr/share/nginx/html
 # Add your nginx.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN apk add libcap && setcap 'cap_net_bind_service=+ep' /app/croc-hunter
-
-USER 1000
-
 # Expose port
 EXPOSE 80
 
 # Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sudo nginx", "-g", "daemon off;"]

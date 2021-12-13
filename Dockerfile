@@ -6,7 +6,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 WORKDIR /app
 
 # Cache and Install dependencies
-COPY package*.json .
+COPY package*.json ./
 COPY yarn.lock .
 RUN npm install --production
 

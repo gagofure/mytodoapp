@@ -27,4 +27,4 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Start nginx
-CMD ["nginx", "-g","--bind 0.0.0.0:$PORT" "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
